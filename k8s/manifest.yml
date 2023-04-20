@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment-transaction
+  labels:
+    app: service-transaction
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-transaction
+  template:
+    metadata:
+      labels:
+        app: service-transaction
+    spec:
+      containers:
+      - name: app-transaction
+        image: juliocm18/app-transaction:1
+        ports:
+        - containerPort: 5005
+        env:
+        - name: NACOS_SERVERADDR
+          value: "143.244.222.245:8848"
+        - name: NACOS_NAMESPACE
+          value: "config-service-test"
+        - name: NACOS_IDENTITYKEY
+          value: "nacos"
+        - name: NACOS_IDENTITYVALUE
+          value: "nacos"
+        - name: NACOS_ENV
+          value: "config-service-test"
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: app-service-transaction
+spec:
+  type: LoadBalancer
+  selector:
+    app: service-transaction
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 5005
+    name: http
+
