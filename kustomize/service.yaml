@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: app-service-transaction
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: service-transaction
   ports:
