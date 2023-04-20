@@ -1,6 +1,5 @@
 const winston = require('winston');
 const { SeqTransport } = require('@datalust/winston-seq');
-const { APP_NAME } = require('../common/constants')
  
 const logger = winston.createLogger({
     transports: [
@@ -14,7 +13,7 @@ const logger = winston.createLogger({
  
 const logProvider = {
     info: (message) => {
-        logger.info(message, {aplication: APP_NAME});
+        logger.info(message, {aplication: "app-transaction"});
     }
 }
  
