@@ -24,6 +24,8 @@
     "nacos": "^2.5.0",
     "zipkin": "^0.22.0",
     "zipkin-instrumentation-express": "^0.22.0",
-    "zipkin-transport-http": "^0.22.0"
+    "zipkin-transport-http": "^0.22.0",
+    "winston": "^3.8.2",
+    "@datalust/winston-seq": "^1.0.2"
   }
 }
