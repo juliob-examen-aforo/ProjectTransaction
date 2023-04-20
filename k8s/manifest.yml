@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: app-transaction
-          image: juliocm18/app-transaction:3
+          image: juliocm18/app-transaction
           ports:
             - containerPort: 5005
           env:
