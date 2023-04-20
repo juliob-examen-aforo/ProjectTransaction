@@ -1,4 +1,4 @@
-FROM node:10-alpine
+FROM node:12-alpine
 ENV NACOS_ENV="config-service-test"
 ENV NACOS_SERVERADDR="143.244.222.245:8848"
 ENV NACOS_NAMESPACE="config-service-test"
